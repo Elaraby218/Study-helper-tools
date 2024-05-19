@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Study helper tools")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+1f539f65ff911c73ecc00830a902ebc3dd912e70")]
 [assembly: System.Reflection.AssemblyProductAttribute("Study helper tools")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Study helper tools")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
