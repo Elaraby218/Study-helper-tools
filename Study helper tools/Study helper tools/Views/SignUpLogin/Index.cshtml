@@ -33,6 +33,11 @@
 
                 <form action="/SignUpLogin/SignUp" class="sign-up-form" method="post">
                     <h2 class="title">Sign up</h2>
+                    <div class="profile-pic-container">
+                        <input type="file" name="file" id="photoUpload" accept="image/*" onchange="previewPhoto(this)" hidden />
+                        <div class="profile-pic" id="photoPreview"></div>
+                        <label for="photoUpload" class="upload-icon">+</label>
+                    </div>
                     <div class="input-field">
                         <i class="fas fa-user"></i>
                         <input type="text" placeholder="Username" name="Username" />
