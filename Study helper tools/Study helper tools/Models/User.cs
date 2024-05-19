@@ -10,5 +10,6 @@
         public string Email { get; set; }
         public DateTime RegisterDate { get; set; }
         public string Password { get; set; }
+        public string PhotoPath { get; set; }
     }
 }
