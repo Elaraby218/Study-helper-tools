@@ -15,7 +15,7 @@ namespace Study_helper_tools.Controllers
 
         public IActionResult Index()
         {
-            return View();
+            return RedirectToAction("Index", "SignUpLogin");
         }
 
         public IActionResult Privacy()
