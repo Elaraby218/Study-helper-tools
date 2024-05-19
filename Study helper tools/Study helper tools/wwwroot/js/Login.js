@@ -34,6 +34,18 @@ function hideValidationTip() {
     validationTip.style.display = "none";
 }
 
+/////////////////////////////////////////////////////////photo validation 
+let photo = document.getElementById("photoUpload");
+let photoVali = function () {
+    const photoValue = photo.value.trim();
+    if (photoValue === "") {
+        return "Photo cannot be empty";
+    } else {
+        return "";
+    }
+};
+
+
 ////////////////////////////////////////////////////////// Elements of the signup form
 let userName = document.getElementById("userName");
 let submigbtn = document.getElementById("signupBtn");
@@ -139,7 +151,8 @@ let validationFunctions = [
     { func: lastNameVali, element: lastName },
     { func: emailVali, element: email },
     { func: phoneNumberVali, element: phoneNumber },
-    { func: passwordValidate, element: password }
+    { func: passwordValidate, element: password },
+    { func: photoVali, element: photoUpload }
 ];
 
 document.getElementById('uploadForm').onsubmit = function (event) {
