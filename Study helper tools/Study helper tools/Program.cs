@@ -1,3 +1,6 @@
+using Microsoft.EntityFrameworkCore;
+using Study_helper_tools.Database;
+
 namespace Study_helper_tools
 {
     public class Program
@@ -8,7 +11,8 @@ namespace Study_helper_tools
 
             // Add services to the container.
             builder.Services.AddControllersWithViews();
-
+            builder.Services.AddDbContext<appDbContext>(options =>
+                 options.UseSqlite(builder.Configuration.GetConnectionString("DefaultConnection")));
             var app = builder.Build();
 
             // Configure the HTTP request pipeline.
