@@ -9,10 +9,6 @@ namespace Study_helper_tools.Database
         }
         public appDbContext() { }
 
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder) 
-        { 
-            optionsBuilder.UseSqlite("Data Source=Database\\StudyHelperTools.db"); 
-        }
         public DbSet<ToDo> ToDos { get; set; }
         public DbSet<User> Users { get; set; }
 
