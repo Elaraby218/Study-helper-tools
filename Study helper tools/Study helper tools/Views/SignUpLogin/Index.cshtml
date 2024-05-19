@@ -31,7 +31,8 @@
 
                 </form>
 
-                <form id="uploadForm" action="/SignUpLogin/SignUp" class="sign-up-form" method="post" enctype="multipart/form-data">
+                <form id="uploadForm" action="/SignUpLogin/SignUp" class="sign-up-form" method="post" enctype="multipart/form-data" >
+                    <div class="validation-tip" id="validationTip"></div>
                     <h2 class="title">Sign up</h2>
 
                     <div class="profile-pic-container">
@@ -42,32 +43,32 @@
 
                     <div class="input-field">
                         <i class="fas fa-user"></i>
-                        <input type="text" placeholder="Username" name="Username" />
+                        <input type="text" placeholder="Username" name="Username" id="userName" />
                     </div>
 
                     <div class="input-field">
                         <i class="fa fa-signature"></i>
-                        <input type="text" placeholder="First Name" name="FirstName" />
+                        <input type="text" placeholder="First Name" name="FirstName" id="firstName"/>
                     </div>
 
                     <div class="input-field">
                         <i class="fa fa-signature"></i>
-                        <input type="text" placeholder="Last Name" name="LastName" />
+                        <input type="text" placeholder="Last Name" name="LastName" id="lastName" />
                     </div>
                     <div class="input-field">
                         <i class="fas fa-envelope"></i>
-                        <input type="email" placeholder="Email" name="Email" />
+                        <input type="email" placeholder="Email" name="Email" id="email" />
                     </div>
                     <div class="input-field">
                         <i class="fa fa-phone"></i>
-                        <input type="text" placeholder="Phone Number" name="PhoneNumber" />
+                        <input type="text" placeholder="Phone Number" name="PhoneNumber" id="phoneNumber" />
                     </div>
                     <div class="input-field">
                         <i class="fas fa-lock"></i>
-                        <input type="password" placeholder="Password" name="Password" />
+                        <input type="password" placeholder="Password" name="Password" id="password" />
                     </div>
-                    <input type="submit" class="btn" value="Sign up" />
-
+                    <input type="submit" class="btn" value="Sign up" id="signupBtn" />
+                    <input type="reset" class="btn" value="Reset" />
 
                 </form>
 
@@ -85,7 +86,7 @@
                         Sign up
                     </button>
                 </div>
-                <img src="/img/log.svg" class="image" alt="" />
+                <img src="/img/vecteezy_school-stationery-3d-icon-illustration_11472450.png" class="image" alt="" />
             </div>
             <div class="panel right-panel">
                 <div class="content">
