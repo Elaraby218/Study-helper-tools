@@ -5,12 +5,68 @@
       "PackagePath": "staticwebassets\\Study helper tools.bundle.scp.css"
     },
     {
+      "Id": "J:\\c#\\study tool helper\\Study helper tools\\Study helper tools\\wwwroot\\css\\Login.css",
+      "PackagePath": "staticwebassets\\css\\Login.css"
+    },
+    {
+      "Id": "J:\\c#\\study tool helper\\Study helper tools\\Study helper tools\\wwwroot\\css\\MainPage.css",
+      "PackagePath": "staticwebassets\\css\\MainPage.css"
+    },
+    {
+      "Id": "J:\\c#\\study tool helper\\Study helper tools\\Study helper tools\\wwwroot\\css\\Pomodoro.css",
+      "PackagePath": "staticwebassets\\css\\Pomodoro.css"
+    },
+    {
+      "Id": "J:\\c#\\study tool helper\\Study helper tools\\Study helper tools\\wwwroot\\css\\ToDo.css",
+      "PackagePath": "staticwebassets\\css\\ToDo.css"
+    },
+    {
       "Id": "J:\\c#\\study tool helper\\Study helper tools\\Study helper tools\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
     },
     {
       "Id": "J:\\c#\\study tool helper\\Study helper tools\\Study helper tools\\wwwroot\\favicon.ico",
       "PackagePath": "staticwebassets\\favicon.ico"
+    },
+    {
+      "Id": "J:\\c#\\study tool helper\\Study helper tools\\Study helper tools\\wwwroot\\img\\4060588_2126916.jpg",
+      "PackagePath": "staticwebassets\\img\\4060588_2126916.jpg"
+    },
+    {
+      "Id": "J:\\c#\\study tool helper\\Study helper tools\\Study helper tools\\wwwroot\\img\\log.svg",
+      "PackagePath": "staticwebassets\\img\\log.svg"
+    },
+    {
+      "Id": "J:\\c#\\study tool helper\\Study helper tools\\Study helper tools\\wwwroot\\img\\register.svg",
+      "PackagePath": "staticwebassets\\img\\register.svg"
+    },
+    {
+      "Id": "J:\\c#\\study tool helper\\Study helper tools\\Study helper tools\\wwwroot\\img\\todo.png",
+      "PackagePath": "staticwebassets\\img\\todo.png"
+    },
+    {
+      "Id": "J:\\c#\\study tool helper\\Study helper tools\\Study helper tools\\wwwroot\\img\\vecteezy_book-and-pencil-education-concept-illustration-for-business_8480552.png",
+      "PackagePath": "staticwebassets\\img\\vecteezy_book-and-pencil-education-concept-illustration-for-business_8480552.png"
+    },
+    {
+      "Id": "J:\\c#\\study tool helper\\Study helper tools\\Study helper tools\\wwwroot\\img\\vecteezy_school-stationery-3d-icon-illustration_11472450.png",
+      "PackagePath": "staticwebassets\\img\\vecteezy_school-stationery-3d-icon-illustration_11472450.png"
+    },
+    {
+      "Id": "J:\\c#\\study tool helper\\Study helper tools\\Study helper tools\\wwwroot\\js\\Login.js",
+      "PackagePath": "staticwebassets\\js\\Login.js"
+    },
+    {
+      "Id": "J:\\c#\\study tool helper\\Study helper tools\\Study helper tools\\wwwroot\\js\\MainPage.js",
+      "PackagePath": "staticwebassets\\js\\MainPage.js"
+    },
+    {
+      "Id": "J:\\c#\\study tool helper\\Study helper tools\\Study helper tools\\wwwroot\\js\\Pomodoro.js",
+      "PackagePath": "staticwebassets\\js\\Pomodoro.js"
+    },
+    {
+      "Id": "J:\\c#\\study tool helper\\Study helper tools\\Study helper tools\\wwwroot\\js\\ToDO.js",
+      "PackagePath": "staticwebassets\\js\\ToDO.js"
     },
     {
       "Id": "J:\\c#\\study tool helper\\Study helper tools\\Study helper tools\\wwwroot\\js\\site.js",
@@ -243,6 +299,22 @@
     {
       "Id": "J:\\c#\\study tool helper\\Study helper tools\\Study helper tools\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
+    },
+    {
+      "Id": "J:\\c#\\study tool helper\\Study helper tools\\Study helper tools\\wwwroot\\uploads\\43ae2fde-256c-4225-86da-867ee70fd974_Screenshot 2020-12-26 220000.jpg",
+      "PackagePath": "staticwebassets\\uploads\\43ae2fde-256c-4225-86da-867ee70fd974_Screenshot 2020-12-26 220000.jpg"
+    },
+    {
+      "Id": "J:\\c#\\study tool helper\\Study helper tools\\Study helper tools\\wwwroot\\uploads\\dbd0266d-b0b9-42cb-aeae-bc07ad02d567_13041423_936993436423591_1943850395942825823_o.jpg",
+      "PackagePath": "staticwebassets\\uploads\\dbd0266d-b0b9-42cb-aeae-bc07ad02d567_13041423_936993436423591_1943850395942825823_o.jpg"
+    },
+    {
+      "Id": "J:\\c#\\study tool helper\\Study helper tools\\Study helper tools\\wwwroot\\uploads\\e3899291-1fcf-4778-ab93-9291d2876134_pp.jpg",
+      "PackagePath": "staticwebassets\\uploads\\e3899291-1fcf-4778-ab93-9291d2876134_pp.jpg"
+    },
+    {
+      "Id": "J:\\c#\\study tool helper\\Study helper tools\\Study helper tools\\wwwroot\\uploads\\noimg.png",
+      "PackagePath": "staticwebassets\\uploads\\noimg.png"
     },
     {
       "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.Study helper tools.Microsoft.AspNetCore.StaticWebAssets.props",

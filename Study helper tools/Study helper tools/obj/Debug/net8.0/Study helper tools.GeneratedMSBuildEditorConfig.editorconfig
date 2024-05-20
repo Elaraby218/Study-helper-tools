@@ -18,6 +18,10 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = J:\c#\study tool helper\Study helper tools\Study helper tools
 build_property._RazorSourceGeneratorDebug = 
 
+[J:/c\#/study tool helper/Study helper tools/Study helper tools/Views/DashBoard/DashBoardIndex.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGFzaEJvYXJkXERhc2hCb2FyZEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [J:/c\#/study tool helper/Study helper tools/Study helper tools/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
@@ -26,12 +30,24 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
+[J:/c\#/study tool helper/Study helper tools/Study helper tools/Views/Promodoro/PromodoroIndex.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvbW9kb3JvXFByb21vZG9yb0luZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [J:/c\#/study tool helper/Study helper tools/Study helper tools/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [J:/c\#/study tool helper/Study helper tools/Study helper tools/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[J:/c\#/study tool helper/Study helper tools/Study helper tools/Views/SignUpLogin/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2lnblVwTG9naW5cSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[J:/c\#/study tool helper/Study helper tools/Study helper tools/Views/ToDo/ToDOIndex.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVG9Eb1xUb0RPSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [J:/c\#/study tool helper/Study helper tools/Study helper tools/Views/_ViewImports.cshtml]

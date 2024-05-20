@@ -73,7 +73,9 @@ namespace Study_helper_tools.Controllers
             if (InUser != null)
             {
                 SharedValues.setCurUser(InUser);
-                SharedValues.setActive("Analytics");
+                SharedValues.setActive("DashBoard");
+                SharedValues.CurUserTasks = _context.ToDos.Where(t => t.UserId == InUser.Id && t.IsDeleted == false).ToList();
+                SharedValues.setTasks();
                 return RedirectToAction("DashBoardIndex", "DashBoard");
             }
             else
