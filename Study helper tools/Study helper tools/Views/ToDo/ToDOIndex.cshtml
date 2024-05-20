@@ -1,32 +1,110 @@
-﻿<head>
+﻿@model ToDo
+
+<head>
     <link rel="stylesheet" href="~/css/ToDO.css" />
 </head>
 <body>
+    <script>
+        function submitForm(taskId) {
+            var formId = "markDoneForm_" + taskId;
+            document.getElementById(formId).submit();
+        }
 
+        function deleteForm(taskId) {
+            var formId = "deleteForm_" + taskId;
+            document.getElementById(formId).submit();
+        }
+
+        function EditForm(taskId) {
+            var formId = "EditForm_" + taskId;
+            document.getElementById(formId).submit();
+        }
+    </script>
     <div class="containerr" id="mydiv">
-        <div class="container">
-            <h1>iam deleted tasks</h1>
-        </div>
-        <div class="container1">
-            <h1> Hi iam Not achieved Tasks</h1>
-        </div>
 
-        <form action="" method="post" id="uploadForm">
+        <!--Achieved-->
+        <div class="container">
+            <div class="titleee"> <h2> Achievd Tasks !</h2></div>
+            @{
+                foreach (var item in SharedValues.CurUserAchievedTasks)
+                {
+                    <div class="containerer">
+                        <div class="wrapper">
+
+                            <h2> @item.TaskTitle</h2>
+                            <h5>@item.AddedDate.ToString("yyyy-MM-dd") : @item.DoneDate.ToString("yyyy-MM-dd") </h5>
+                            <h4>
+                                @item.TaskDescription
+                            </h4>
+                        </div>
+                        <div class="button-wrapper">
+                            <form method="post" action="/ToDo/DelteTask" id="deleteForm_@item.Id">
+                                <input type="hidden" name="taskID" value="@item.Id" />
+                            </form>
+                            <button class="btnn fill" onclick="deleteForm(@item.Id)">Delete</button>
+                        </div>
+                    </div>
+                }
+            }
+        </div>
+        <!--Achieved-->
+        <!--Not Achieved-->
+        <div class="container1">
+            <div class="titleee"> <h2>Not Achievd Tasks !</h2></div>
+            @{
+                foreach (var item in SharedValues.CurUserNotAchievedTasks)
+                {
+                    <div class="containerer">
+                        <div class="wrapper">
+                            <h2>@item.TaskTitle</h2>
+                            <h5>@item.AddedDate.ToString("yyyy-MM-dd")</h5>
+                            <h4>@item.TaskDescription;</h4>
+                        </div>
+                        <div class="button-wrapper">
+                            <button class="btnn outline" onclick="EditForm(@item.Id)">Edit</button>
+                            <button class="btnn fill" onclick="deleteForm(@item.Id)">Delete</button>
+                            <button type="button" class="btnn outline" onclick="submitForm(@item.Id)">Mark Done</button>
+                            <form method="post" action="/ToDo/MarkTaskAsDone" id="markDoneForm_@item.Id">
+                                <input type="hidden" name="taskID" value="@item.Id" />
+                            </form>
+                            <form method="post" action="/ToDo/DelteTask" id="deleteForm_@item.Id">
+                                <input type="hidden" name="taskID" value="@item.Id" />
+                            </form>
+                            <form method="post" action="/ToDo/EditTask" id="EditForm_@item.Id">
+                                <input type="hidden" name="taskID" value="@item.Id" />
+                            </form>
+                        </div>
+                    </div>
+                }
+            }
+
+        </div>
+        <!--Not Achieved-->
+
+
+        <form action="/ToDo/AddTask" method="post" id="uploadForm">
             <div class="validation-tip" id="validationTip"></div>
             <div class="formm">
-                <div class="titlee">Add New Task!</div>
+                <div class="titlee">Add New Task !</div>
                 <div class="input-container ic1">
-                    <input id="taskTitle" class="input" type="text" placeholder=" " name="TaskTitle" />
+                    <input id="taskTitle" class="input" type="text" placeholder=" " name="TaskTitle" value="@Model.TaskTitle" />
                     <div class="cut"></div>
                     <label for="taskTitle" class="placeholder">Title</label>
                 </div>
 
                 <div class="input-container ic2">
-                    <textarea name="TaskDescription" class="inputt" id="taskDescription" placeholder=""></textarea>
+                    <textarea name="TaskDescription" class="inputt" id="taskDescription" placeholder="">@Model.TaskDescription</textarea>
                     <label for="taskDescription" class="placeholder">Description</label>
                 </div>
-
-                <button type="submit" class="submit">Add Task</button>
+                <input name="Id" value="@Model.Id" hidden/>
+                @{
+                    string text = "Add Tasl";
+                    if (Model.TaskTitle!=null)
+                    {
+                        text = "Edit Task";
+                    }
+                }
+                <button type="submit" class="submit">@text</button>
             </div>
         </form>
 
