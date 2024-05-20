@@ -2,6 +2,7 @@
     <link rel="stylesheet" href="~/css/ToDO.css" />
 </head>
 <body>
+
     <div class="containerr" id="mydiv">
         <div class="container">
             <h1>iam deleted tasks</h1>
@@ -9,21 +10,25 @@
         <div class="container1">
             <h1> Hi iam Not achieved Tasks</h1>
         </div>
-        <div class="formm">
-            <div class="titlee">Add New Task!</div>
-            <div class="input-container ic1">
-                <input id="firstname" class="input" type="text" placeholder=" " />
-                <div class="cut"></div>
-                <label for="firstname" class="placeholder">Title</label>
-            </div>
 
-            <div class="input-container ic2">
-                <textarea name="multiLineInput" class="inputt" id="lastname" placeholder=""></textarea>
-                <label for="lastname" class="placeholder">Description</label>
-            </div>
+        <form action="" method="post" id="uploadForm">
+            <div class="validation-tip" id="validationTip"></div>
+            <div class="formm">
+                <div class="titlee">Add New Task!</div>
+                <div class="input-container ic1">
+                    <input id="taskTitle" class="input" type="text" placeholder=" " name="TaskTitle" />
+                    <div class="cut"></div>
+                    <label for="taskTitle" class="placeholder">Title</label>
+                </div>
 
-            <button type="submit" class="submit">Add Task</button>
-        </div>
+                <div class="input-container ic2">
+                    <textarea name="TaskDescription" class="inputt" id="taskDescription" placeholder=""></textarea>
+                    <label for="taskDescription" class="placeholder">Description</label>
+                </div>
+
+                <button type="submit" class="submit">Add Task</button>
+            </div>
+        </form>
 
     </div>
 
