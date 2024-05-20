@@ -1,0 +1,92 @@
+﻿.container  {
+    background-color: #ffffff; /* Light background color */
+    width:800px;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 30%;
+    left: 50%;
+    padding: 4em 2em;
+    border-radius: 0.5em;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add shadow for better visibility */
+}
+
+.containerr {
+    background-color: #ffffff; /* Light background color */
+    width: 800px;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 70%;
+    left: 50%;
+    padding: 4em 2em;
+    border-radius: 0.5em;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add shadow for better visibility */
+    height: 300px;
+}
+
+button {
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+
+.section-container {
+    display: flex;
+    gap: 1em;
+    justify-content: center;
+}
+
+.btn {
+    padding: 1em 2em;
+    border-radius: 0.5em;
+    background-color: #e0e0e0; /* Light gray background for buttons */
+    color: #333333; /* Darker text color */
+}
+
+.btn-focus {
+    background-color: #007bff; /* Blue background for focused button */
+    color: #ffffff;
+}
+
+.time-btn-container {
+    display: flex;
+    flex-direction: column;
+    margin-top: 2em;
+}
+
+#time {
+    text-align: center;
+    color: #333333; /* Darker text color */
+    font-size: 5em;
+    font-weight: 600;
+}
+
+.btn-container {
+    display: flex;
+    justify-content: center;
+    gap: 2em;
+}
+
+#btn-start,
+#btn-pause {
+    padding: 1em 2em;
+    border-radius: 0.5em;
+    cursor: pointer;
+    background-color: #007bff; /* Blue background for start and pause buttons */
+    color: #ffffff;
+}
+
+#btn-reset {
+    background-color: transparent;
+    border: none;
+    outline: none;
+    color: #007bff; /* Blue text color for reset button */
+    font-size: 2em;
+}
+
+.hidee {
+    display: none;
+}
+
+.showw {
+    display: block;
+}
