@@ -1,0 +1,198 @@
+﻿
+.container {
+    background-color: #ffffff;
+    width: 500px;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 83%;
+    border-radius: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    height: 700px;
+    padding: 4em 2em;
+}
+
+.container1 {
+    background-color: #ffffff;
+    width: 500px;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+    border-radius: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    height: 700px;
+    padding: 4em 2em;
+}
+
+.containerr {
+    background-color: #cccccc;
+    width: 1800px;
+    position: sticky;
+    top: 50%;
+    left: 0%;
+    border-radius: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    height: 770px;
+    padding: 4em 2em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+
+
+.formm {
+    background-color: #ffffff; /* Light form background color */
+    border-radius: 20px;
+    box-sizing: border-box;
+    height: 700px;
+    padding: 20px;
+    width: 500px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add shadow for better visibility */
+    margin-left: 20px;
+}
+
+.titlee {
+    color: #333333; /* Dark text color */
+    font-family: sans-serif;
+    font-size: 36px;
+    font-weight: 600;
+    margin-top: 5px;
+}
+
+.subtitle {
+    color: #555555; /* Slightly lighter dark text color */
+    font-family: sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    margin-top: 10px;
+}
+
+.input-container {
+    height: 50px;
+    position: relative;
+    width: 100%;
+}
+
+.ic1 {
+    margin-top: 40px;
+}
+
+.ic2 {
+    margin-top: 30px;
+}
+
+.input {
+    background-color: #f0f0f0; /* Light input background color */
+    border-radius: 12px;
+    border: 1px solid #cccccc; /* Light border color */
+    box-sizing: border-box;
+    color: #333333; /* Dark text color */
+    font-size: 18px;
+    height: 100%;
+    outline: 0;
+    padding: 4px 20px 0;
+    width: 100%;
+}
+
+.inputt {
+    background-color: #f0f0f0; /* Light input background color */
+    border-radius: 12px;
+    border: 1px solid #cccccc; /* Light border color */
+    box-sizing: border-box;
+    color: #333333; /* Dark text color */
+    font-size: 18px;
+    height: 200px; /* Fixed height */
+    width: 100%; /* Fixed width */
+    outline: 0;
+    padding: 4px 20px;
+    resize: none; /* Prevent resizing */
+    overflow-y: auto; /* Add scrollbar if needed */
+    white-space: pre-wrap; /* Preserve whitespace and wrap text */
+}
+
+.cut {
+    background-color: #ffffff; /* Match form background color */
+    border-radius: 10px;
+    height: 20px;
+    left: 20px;
+    position: absolute;
+    top: -20px;
+    transform: translateY(0);
+    transition: transform 200ms;
+    width: 76px;
+}
+
+.cut-short {
+    width: 50px;
+}
+
+.input:focus ~ .cut,
+.input:not(:placeholder-shown) ~ .cut {
+    transform: translateY(8px);
+}
+
+.placeholder {
+    color: #999999; /* Light gray placeholder color */
+    font-family: sans-serif;
+    left: 20px;
+    line-height: 14px;
+    pointer-events: none;
+    position: absolute;
+    transform-origin: 0 50%;
+    transition: transform 200ms, color 200ms;
+    top: 20px;
+}
+
+.input:focus ~ .placeholder,
+.input:not(:placeholder-shown) ~ .placeholder {
+    transform: translateY(-30px) translateX(10px) scale(0.75);
+}
+
+.input:not(:placeholder-shown) ~ .placeholder {
+    color: #666666; /* Darker gray color when not focused */
+}
+
+.input:focus ~ .placeholder {
+    color: #007bff; /* Blue color for focus state */
+}
+
+
+
+.inputt:focus ~ .cut,
+.inputt:not(:placeholder-shown) ~ .cut {
+    transform: translateY(8px);
+}
+
+.inputt:focus ~ .placeholder,
+.inputt:not(:placeholder-shown) ~ .placeholder {
+    transform: translateY(-30px) translateX(10px) scale(0.75);
+}
+
+.inputt:not(:placeholder-shown) ~ .placeholder {
+    color: #666666; /* Darker gray color when not focused */
+}
+
+.inputt:focus ~ .placeholder {
+    color: #007bff; /* Blue color for focus state */
+}
+
+.submit {
+    background-color: #007bff; /* Blue background color */
+    border-radius: 12px;
+    border: 0;
+    box-sizing: border-box;
+    color: #ffffff; /* White text color */
+    cursor: pointer;
+    font-size: 18px;
+    height: 50px;
+    margin-top: 380px;
+    text-align: center;
+    width: 100%;
+}
+
+    .submit:active {
+        background-color: #0056b3; /* Darker blue when active */
+    }

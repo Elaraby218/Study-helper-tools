@@ -20,7 +20,7 @@
 
     <!--Side Bar-->
 
-    <section id="sidebar">
+    <section id="sidebar" class="hide">
         <a href="#" class="brand">
             <i class='bx bxs-down-arrow'></i>
             <span class="text">Study Helper</span>
@@ -33,7 +33,7 @@
                 </a>
             </li>
             <li class="@SharedValues.ToDoActive">
-                <a href="#">
+                <a href="/TOdo/ToDOIndex">
                     <i class='bx bxs-check-square'></i>
                     <span class="text">To Do</span>
                 </a>
@@ -81,8 +81,10 @@
         <!-- MAIN -->
 
         <main>
+            <div clss="left">
+                @RenderBody()
+            </div>
             <!--Render Body-->
-            @RenderBody()
 
         </main>
     </section>
