@@ -56,7 +56,7 @@ namespace Study_helper_tools.Controllers
                 _context.Users.Add(user);
                 _context.SaveChanges();
 
-                return RedirectToAction("Privacy", "Home");
+                return RedirectToAction("index");
             }
             else
             {
@@ -72,7 +72,9 @@ namespace Study_helper_tools.Controllers
             User InUser = _context.Users.FirstOrDefault(u => u.Username == user.Username && u.Password == user.Password);
             if (InUser != null)
             {
-                return RedirectToAction("Privacy", "Home");
+                SharedValues.setCurUser(InUser);
+                SharedValues.setActive("Analytics");
+                return RedirectToAction("DashBoardIndex", "DashBoard");
             }
             else
             {
