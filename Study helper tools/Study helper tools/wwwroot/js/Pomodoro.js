@@ -7,58 +7,58 @@ let reset = document.getElementById("btn-reset");
 let pause = document.getElementById("btn-pause");
 let time = document.getElementById("time");
 let set;
-let active = null; // Initially, no button is active
+let active = null; 
 let count = 59;
 let paused = true;
 let minCount = 24;
-let taskStartTime; // Variable to store the start time of the task
-let isFocusMode = false; // Variable to check if focus mode is selected
+let taskStartTime; 
+let isFocusMode = false; 
 
 time.textContent = `${minCount + 1}:00`;
 
-// Function to calculate the time spent on the task
+
 const calculateTimeSpent = () => {
     let currentTime = new Date();
-    let elapsedTime = (currentTime - taskStartTime) / 1000; // Convert milliseconds to seconds
-    let minutes = Math.floor(elapsedTime / 60); // Calculate minutes
-    console.log(`Time spent: ${minutes} minutes`); // Debug
+    let elapsedTime = (currentTime - taskStartTime) / 1000; 
+    let minutes = Math.floor(elapsedTime / 60); 
+    console.log(`Time spent: ${minutes} minutes`); 
     return minutes;
 };
 
-// Function to pause the timer
+
 const pauseTimer = () => {
     paused = true;
     clearInterval(set);
     startBtn.classList.remove("hide");
     pause.classList.remove("show");
     reset.classList.remove("show");
-    console.log("Timer paused"); // Debug
+    console.log("Timer paused"); 
 };
 
-// Function to send time spent to the server
+
 const sendTimeSpentToServer = (timeSpent) => {
-    console.log(`Task ID: ${taskId}`); // Debug
+    console.log(`Task ID: ${taskId}`); 
     let form = document.getElementById(`MarkDone_${taskId}`);
     let timeInput = form.querySelector("input[name='timePerTask']");
     timeInput.value = timeSpent;
-    console.log(`Form data: taskID=${taskId}, timePerTask=${timeSpent}`); // Debug
-    form.submit(); // Submit the form to send time spent to the server
+    console.log(`Form data: taskID=${taskId}, timePerTask=${timeSpent}`);
+    form.submit(); 
 };
 
-// Function to handle pausing the timer and submitting time spent when any button is clicked
+
 const pauseAndSubmit = () => {
     if (!paused) {
-        pauseTimer(); // Pause the timer
+        pauseTimer(); 
         if (isFocusMode) {
-            let timeSpent = calculateTimeSpent(); // Calculate time spent on the task
-            sendTimeSpentToServer(timeSpent); // Send time spent to the server
+            let timeSpent = calculateTimeSpent(); 
+            sendTimeSpentToServer(timeSpent); 
         }
     }
 };
 
 focusButton.addEventListener("click", () => {
-    isFocusMode = true; // Set focus mode to true
-    active = "focus"; // Set active mode to focus
+    isFocusMode = true; 
+    active = "focus"; 
     buttons.forEach((btn) => {
         btn.classList.remove("btn-focus");
     });
@@ -67,12 +67,12 @@ focusButton.addEventListener("click", () => {
     minCount = 24;
     count = 59;
     time.textContent = `${minCount + 1}:00`;
-    console.log("Focus mode selected"); // Debug
+    console.log("Focus mode selected"); 
 });
 
 shortBreakButton.addEventListener("click", () => {
-    isFocusMode = false; // Set focus mode to false
-    active = "short"; // Set active mode to short
+    isFocusMode = false; 
+    active = "short"; 
     buttons.forEach((btn) => {
         btn.classList.remove("btn-focus");
     });
@@ -81,12 +81,12 @@ shortBreakButton.addEventListener("click", () => {
     minCount = 4;
     count = 59;
     time.textContent = `${appendZero(minCount + 1)}:00`;
-    console.log("Short break selected"); // Debug
+    console.log("Short break selected"); 
 });
 
 longBreakButton.addEventListener("click", () => {
-    isFocusMode = false; // Set focus mode to false
-    active = "long"; // Set active mode to long
+    isFocusMode = false; 
+    active = "long"; 
     buttons.forEach((btn) => {
         btn.classList.remove("btn-focus");
     });
@@ -95,7 +95,7 @@ longBreakButton.addEventListener("click", () => {
     minCount = 14;
     count = 59;
     time.textContent = `${minCount + 1}:00`;
-    console.log("Long break selected"); // Debug
+    console.log("Long break selected"); 
 });
 
 pause.addEventListener("click", pauseAndSubmit);
@@ -117,8 +117,8 @@ startBtn.addEventListener("click", () => {
 
     if (paused) {
         paused = false;
-        taskStartTime = new Date(); // Set the start time of the task
-        console.log("Timer started"); // Debug
+        taskStartTime = new Date(); 
+        console.log("Timer started"); 
         console.log(`Task id = ${taskId}`);
         time.textContent = `${appendZero(minCount)}:${appendZero(count)}`;
         set = setInterval(() => {
@@ -158,7 +158,7 @@ reset.addEventListener("click", () => {
     }
     count = 59;
     time.textContent = `${minCount + 1}:00`;
-    console.log("Timer reset"); // Debug
+    console.log("Timer reset"); 
 });
 
 function appendZero(value) {
