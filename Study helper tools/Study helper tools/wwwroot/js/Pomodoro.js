@@ -129,7 +129,10 @@ startBtn.addEventListener("click", () => {
                     minCount--;
                     count = 60;
                 } else {
+                    let timeSpent = calculateTimeSpent();
+                    sendTimeSpentToServer(timeSpent);
                     clearInterval(set);
+
                 }
             }
         }, 1000);
