@@ -72,6 +72,27 @@ document.getElementById('uploadForm').onsubmit = function (event) {
     }
 };
 
+document.getElementById('uploadForm').onfocus = function (event) {
+    let isValid = true;
+
+    for (let { func, element } of validationFunctions) {
+        let errorMessage = func();
+        if (errorMessage) {
+            showValidationTip(errorMessage);
+            isValid = false;
+            element.focus();
+            break;
+        }
+    }
+
+    if (!isValid) {
+        event.preventDefault();
+    } else {
+        return;
+    }
+};
+
+
 // Attach onblur and onmouseout events to input fields
 validationFunctions.forEach(({ func, element }) => {
     element.addEventListener("blur", function () {
