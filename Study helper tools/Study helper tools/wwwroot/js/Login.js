@@ -14,9 +14,9 @@ sign_in_btn.addEventListener("click", () => {
 function previewPhoto(input) {
     if (input.files && input.files[0]) {
         var reader = new FileReader();
-        reader.onload = function (e) {
-            document.getElementById('photoPreview').style.backgroundImage = 'url(' + e.target.result + ')';
-            document.getElementById('photoPath').value = e.target.result; 
+        reader.onload = function (e) { // e is onload event :)
+            document.getElementById('photoPreview').style.backgroundImage = 'url(' + e.target.result + ')'; // set the image to the background of the div
+            document.getElementById('photoPath').value = e.target.result; // set the value of the hidden input to the base64 string
         };
         reader.readAsDataURL(input.files[0]);
     }
@@ -60,12 +60,18 @@ let password = document.getElementById("password");
 let userNameVali = function () {
     const userNameValue = userName.value.trim();
     const userNamePattern = /^[a-zA-Z0-9_]+$/;
-
+    eval("console.log('UserName Validation')");
     if (userNameValue === "") {
         return "Username cannot be empty";
     } else if (!userNamePattern.test(userNameValue)) {
         return "Username can only contain letters, digits, and underscores";
-    } else {
+    } else if (!isNaN(string(userNameValue))) {
+        return "Username cannot be only numbers";
+    }
+    else if (userNamevalue.find("@") !== -1) {
+        return "Username cannot have @ sign";
+    }
+    else {
         return "";
     }
 };
@@ -75,7 +81,7 @@ let userNameVali = function () {
 let firstNameVali = function () {
     const firstNameValue = firstName.value.trim();
     const regex = /^[a-zA-Z]{1,10}$/;
-
+    eval("console.log('First Name Validation')");
     if (firstNameValue === "") {
         return "First name cannot be empty";
     } else if (!regex.test(firstNameValue)) {
@@ -88,7 +94,7 @@ let firstNameVali = function () {
 let lastNameVali = function () {
     const lastNameValue = lastName.value.trim();
     const regex = /^[a-zA-Z]{1,10}$/;
-
+    eval("console.log('Last Name Validation')");
     if (lastNameValue === "") {
         return "Last name cannot be empty";
     } else if (!regex.test(lastNameValue)) {
@@ -103,7 +109,7 @@ let lastNameVali = function () {
 let emailVali = function () {
     const emailValue = email.value.trim();
     const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-
+    eval("console.log('Email Name Validation')");
     if (emailValue === "") {
         return "Email cannot be empty";
     } else if (!regex.test(emailValue)) {
@@ -118,7 +124,7 @@ let emailVali = function () {
 let phoneNumberVali = function () {
     const phoneNumberValue = phoneNumber.value.trim();
     const regex = /^\d{11}$/;
-
+    eval("console.log('Phone Name Validation')");
     if (phoneNumberValue === "") {
         return "Phone number cannot be empty";
     } else if (!regex.test(phoneNumberValue)) {
@@ -133,7 +139,7 @@ let phoneNumberVali = function () {
 let passwordValidate = function () {
     const passwordValue = password.value.trim();
     const regex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
-
+    eval("console.log('Password Validation')");
     if (passwordValue === "") {
         return "Password cannot be empty";
     } else if (!regex.test(passwordValue)) {
@@ -195,3 +201,9 @@ validationFunctions.forEach(({ func, element }) => {
     });
 });
 
+userName.onblur = userNameVali;
+firstName.onblur = firstNameVali;
+lastName.onblur = lastNameVali;
+email.onblur = emailVali;
+phoneNumber.onblur = phoneNumberVali;
+password.onblur = passwordValidate;

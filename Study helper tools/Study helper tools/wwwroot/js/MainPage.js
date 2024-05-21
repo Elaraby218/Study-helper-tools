@@ -1,4 +1,6 @@
-﻿const allSideMenu = document.querySelectorAll('#sidebar .side-menu.top li a');
+﻿"use strict";
+
+const allSideMenu = document.querySelectorAll('#sidebar .side-menu.top li a');
 
 allSideMenu.forEach(item => {
 	const li = item.parentElement;
@@ -18,8 +20,6 @@ menuBar.addEventListener('click', function () {
 	sidebar.classList.toggle('hide');
 })
 
-
 if (window.innerWidth < 768) {
 	sidebar.classList.add('hide');
 }
-
