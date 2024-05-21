@@ -41,8 +41,8 @@ body.dark {
 }
 
 body {
+    overflow-y: hidden; /* Hide vertical scrollbar */
     background: var(--grey);
-    overflow-x: hidden;
 }
 
 
@@ -340,13 +340,23 @@ body {
 /* Styling for the main content area */
 #content main {
     width: 100%;
-    padding: 36px 24px;
+    padding: 0px 24px;
     font-family: var(--poppins);
-    height: 850px;
-    overflow-y: auto;
-    
+    height: 900px;
+    overflow-y: scroll;
+    border-radius: 40px;
 }
 
+    /* Hide scrollbar for Webkit browsers */
+    #content main::-webkit-scrollbar {
+        display: none;
+    }
+
+/* Hide scrollbar for other browsers */
+#content main {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+}
 
 
     #content main .head-title {
@@ -491,105 +501,30 @@ body {
         #content main .table-data .order {
             flex-grow: 1;
             flex-basis: 500px;
+            overflow-y: auto;
+            max-height: 800px;
+            height: 710px;
         }
 
-            #content main .table-data .order table {
-                width: 100%;
-                border-collapse: collapse;
+            #content main .table-data .order::-webkit-scrollbar {
+                display: none;
             }
 
-                #content main .table-data .order table th {
-                    padding-bottom: 12px;
-                    font-size: 13px;
-                    text-align: left;
-                    border-bottom: 1px solid var(--grey);
-                }
 
-                #content main .table-data .order table td {
-                    padding: 16px 0;
-                }
 
-                #content main .table-data .order table tr td:first-child {
-                    display: flex;
-                    align-items: center;
-                    grid-gap: 12px;
-                    padding-left: 6px;
-                }
 
-                #content main .table-data .order table td img {
-                    width: 36px;
-                    height: 36px;
-                    border-radius: 50%;
-                    object-fit: cover;
-                }
 
-                #content main .table-data .order table tbody tr:hover {
-                    background: var(--grey);
-                }
-
-                #content main .table-data .order table tr td .status {
-                    font-size: 10px;
-                    padding: 6px 16px;
-                    color: var(--light);
-                    border-radius: 20px;
-                    font-weight: 700;
-                }
-
-                    #content main .table-data .order table tr td .status.completed {
-                        background: var(--blue);
-                    }
-
-                    #content main .table-data .order table tr td .status.process {
-                        background: var(--yellow);
-                    }
-
-                    #content main .table-data .order table tr td .status.pending {
-                        background: var(--orange);
-                    }
 
 
         #content main .table-data .todo {
             flex-grow: 1;
             flex-basis: 300px;
+            height: 710px;
         }
 
-            #content main .table-data .todo .todo-list {
-                width: 100%;
+            #content main .table-data .todo::-webkit-scrollbar {
+                display: none;
             }
-
-                #content main .table-data .todo .todo-list li {
-                    width: 100%;
-                    margin-bottom: 16px;
-                    background: var(--grey);
-                    border-radius: 10px;
-                    padding: 14px 20px;
-                    display: flex;
-                    justify-content: space-between;
-                    align-items: center;
-                }
-
-                    #content main .table-data .todo .todo-list li .bx {
-                        cursor: pointer;
-                    }
-
-                    #content main .table-data .todo .todo-list li.completed {
-                        border-left: 10px solid var(--blue);
-                    }
-
-                    #content main .table-data .todo .todo-list li.not-completed {
-                        border-left: 10px solid var(--orange);
-                    }
-
-                    #content main .table-data .todo .todo-list li:last-child {
-                        margin-bottom: 0;
-                    }
-/* MAIN */
-/* CONTENT */
-
-
-
-
-
 
 
 
@@ -623,7 +558,6 @@ body {
         width: auto;
         height: auto;
         background: transparent;
-        border-radius: none;
         color: var(--dark);
     }
 
