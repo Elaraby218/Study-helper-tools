@@ -97,6 +97,30 @@
 <body>
 
 
+    @* <ul class="box-info">
+        <li>
+            <i class='bx bxs-calendar-check'></i>
+            <span class="text">
+                <h3>@SharedValues.totalAchievedTasks</h3>
+                <p>Achieved Tasks</p>
+            </span>
+        </li>
+        <li>
+            <i class='bx bxs-time-five'></i>
+            <span class="text">
+                <h3>@(SharedValues.totalAchievedTime / 60) H @(SharedValues.totalAchievedTime % 60) M </h3>
+                <p>Time spent on tasks</p>
+            </span>
+        </li>
+        <li>
+            <i class='bx bxs-error-alt'></i>
+            <span class="text">
+                <h3>@SharedValues.totalNotAchievedTasks</h3>
+                <p>Not Achieved Tasks</p>
+            </span>
+        </li>
+    </ul> *@
+
     <ul class="box-info">
         <li>
             <i class='bx bxs-calendar-check'></i>
@@ -191,5 +215,25 @@
 
 
     <script src="script.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const taskBoxes = document.querySelectorAll(".box-info li");
+
+            taskBoxes.forEach(box => {
+                box.addEventListener("click", function () {
+                    alert("Box clicked!");
+                    // You can add more actions here
+                });
+
+                box.addEventListener("mouseover", function () {
+                    box.style.backgroundColor = "#f0f0f0"; // Change background color on hover
+                });
+
+                box.addEventListener("mouseout", function () {
+                    box.style.backgroundColor = ""; // Reset background color
+                });
+            });
+        });
+    </script>
 </body>
 </html>
