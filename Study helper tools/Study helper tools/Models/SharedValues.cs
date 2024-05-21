@@ -76,5 +76,17 @@ namespace Study_helper_tools.Models
                 }
             }
         }
+
+        public static void setAllNull()
+        {
+            SharedValues.CurUser = null;
+            SharedValues.AnalyticsActive = "";
+            SharedValues.DashBoardActive = "";
+            SharedValues.ToDoActive = "";
+            SharedValues.PromdoroActive = "";
+            SharedValues.CurUserTasks.Clear();
+            SharedValues.CurUserAchievedTasks.Clear();
+            SharedValues.CurUserNotAchievedTasks.Clear();
+        }
     }
 }
