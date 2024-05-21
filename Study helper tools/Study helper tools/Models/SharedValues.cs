@@ -13,6 +13,10 @@ namespace Study_helper_tools.Models
         public static List<ToDo> CurUserAchievedTasks = new List<ToDo>();
         public static List<ToDo> CurUserNotAchievedTasks = new List<ToDo>();
         public static ToDo CurTask = null;
+
+        public static int totalAchievedTasks = 0;
+        public static int totalNotAchievedTasks = 0;
+        public static long totalAchievedTime = 0;
         public static void setCurUser(User user)
         {
             CurUser = user;
@@ -65,15 +69,21 @@ namespace Study_helper_tools.Models
         {
             SharedValues.CurUserNotAchievedTasks.Clear();
             SharedValues.CurUserAchievedTasks.Clear();
+            totalAchievedTasks = 0;
+            totalNotAchievedTasks = 0;
+            totalAchievedTime = 0;
             foreach(var item in CurUserTasks)
             {
                 if(item.IsDone)
                 {
                     CurUserAchievedTasks.Add(item);
+                    totalAchievedTasks++;
+                    totalAchievedTime += item.TimePerTask;
                 }
                 else if(!item.IsDone)
                 {
                     CurUserNotAchievedTasks.Add(item);
+                    totalNotAchievedTasks++;
                 }
             }
         }
