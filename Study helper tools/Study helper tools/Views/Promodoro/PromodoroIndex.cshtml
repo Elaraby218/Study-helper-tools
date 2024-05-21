@@ -13,15 +13,33 @@
     <link rel="stylesheet" href="/css/Pomodoro.css" />
 </head>
 <body>
+    @{
+        if (SharedValues.CurTask != null)
+        {
+            <script>
+                let taskId = @SharedValues.CurTask.Id;
+            </script>
+        } else
+        {
+            <script>
+                let taskId = 0;
+            </script>
+        }
+    }
+    <script>
+        function SelectForm(taskId) {
+            var formId = "SelectForm_" + taskId;
+            document.getElementById(formId).submit();
+        }
+
+        function MarkDoneForm(taskId) {
+            var formId = "MarkDonee_" + taskId;
+            document.getElementById(formId).submit();
+        }
+    </script>
+
     <div class="container">
-        <!--
-        <div class="section-container">
-            <h1>Note that when you start, No stop untill session end !!</h1>
-        </div>
-        <div class="section-container">
-          <h1> "\n"</h1>
-        </div>
-        -->
+
         <div class="section-container">
             <button id="focus" class="btn btn-timer btn-focus">Focus</button>
             <button id="shortbreak" class="btn btn-shortbreak">Short Break</button>
@@ -31,15 +49,64 @@
             <span id="time"></span>
             <div class="btn-container">
                 <button id="btn-start" class="showw">Start</button>
-                <button id="btn-pause" class="hidee">Pause</button>
+                <button id="btn-pause" >Pause</button>
                 <button id="btn-reset" class="hidee">
                     <i class="fa-solid fa-rotate-right"></i>
                 </button>
             </div>
         </div>
     </div>
+
     <div class="containerr">
-        <h1>hello iam second container , i will be the continer of the task you will work on </h1>
+        @{
+            if (SharedValues.CurTask == null)
+            {
+                foreach (var task in SharedValues.CurUserNotAchievedTasks)
+                {
+                    <div class="containerer">
+                        <div class="wrapper">
+
+                            <h2>@task.TaskTitle</h2>
+                            <h5>@task.AddedDate</h5>
+                            <h4>
+                                @task.TaskDescription
+                            </h4>
+                        </div>
+                        <div class="button-wrapper">
+                            <form method="post" action="/Promodoro/SelectTask" id="SelectForm_@task.Id">
+                                <input type="hidden" name="taskID" value="@task.Id" />
+                            </form>
+                            <button class="btnn fill" onclick="SelectForm(@task.Id)">Select</button>
+                        </div>
+                    </div>
+                }
+            }
+            else
+            {
+                <div class="containerer">
+                    <div class="wrapper">
+
+                        <h2>@SharedValues.CurTask.TaskTitle</h2>
+                        <h5>@SharedValues.CurTask.AddedDate</h5>
+                        <h4>
+                            @SharedValues.CurTask.TaskDescription
+                        </h4>
+                    </div>
+                    <div class="button-wrapper">
+                        <form method="post" action="/Promodoro/EditTimePerTask" id="MarkDone_@SharedValues.CurTask.Id">
+                            <input type="hidden" name="taskID" value="@SharedValues.CurTask.Id" />
+                            <input type="number" name="timePerTask" hidden  />
+                        </form>
+                        <form method="post" action="/Promodoro/MarkDoneTask" id="MarkDonee_@SharedValues.CurTask.Id">
+                            <input type="hidden" name="taskID" value="@SharedValues.CurTask.Id" />
+                            <input type="number" name="timePerTask" hidden />
+                        </form>
+                        <button class="btnn fill" onclick="MarkDoneForm(@SharedValues.CurTask.Id)">Mark as done</button>
+                    </div>
+                </div>
+            }
+        }
+
     </div>
 
     <!-- Script -->
