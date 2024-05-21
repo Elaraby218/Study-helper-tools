@@ -27,10 +27,11 @@ namespace Study_helper_tools.Controllers
         }
 
         [HttpPost]
-        public IActionResult MarkDoneTask(int taskId)
+        public IActionResult MarkDoneTask(int taskId , int timePerTask)
         {
             ToDo task = _db.ToDos.FirstOrDefault(t=>t.Id == taskId);
             task.IsDone = true;
+            task.TimePerTask += timePerTask;
             _db.SaveChanges();
             SharedValues.CurUserTasks = _db.ToDos.Where(t=>t.UserId == SharedValues.CurUser.Id && t.IsDeleted==false).ToList();
             SharedValues.setTasks();
@@ -43,6 +44,7 @@ namespace Study_helper_tools.Controllers
         {
             _db.ToDos.FirstOrDefault(t=>t.Id == taskID).TimePerTask += timePerTask;
             _db.SaveChanges();
+            SharedValues.CurTask = null;
             return View("PromodoroIndex");
         }
     }
