@@ -60,7 +60,7 @@ namespace Study_helper_tools.Controllers
             }
             else
             {
-                return Content("User already exists");
+                return View("UserExist");
             }
         }
 
@@ -80,7 +80,7 @@ namespace Study_helper_tools.Controllers
             }
             else
             {
-                return Content("User not found");
+                return View("NotFound");
             }
         }
 
