@@ -1,6 +1,6 @@
 ﻿.container  {
     background-color: #ffffff; 
-    width:800px;
+    width:900px;
     position: absolute;
     transform: translate(-50%, -50%);
     top: 30%;
@@ -11,20 +11,20 @@
 }
 
 .containerr {
-    background-color: #ffffff; /* Light background color */
-    width: 800px;
+    background-color: #ffffff;
+    width: 900px;
     position: absolute;
     transform: translate(-50%, -50%);
-    top: 70%;
+    top: 75%;
     left: 50%;
     padding: 1.5em 2em;
     border-radius: 0.5em;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add shadow for better visibility */
-    height: 300px;
-    overflow: auto; /* Enable scrolling */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    height: 450px;
+    overflow: auto;
     display: flex;
-    flex-wrap: wrap; /* Allow items to wrap to the next line */
-    gap: 1em; /* Optional: space between items */
+    flex-wrap: wrap;
+    gap: 1em;
 }
 
     .containerr > * {
