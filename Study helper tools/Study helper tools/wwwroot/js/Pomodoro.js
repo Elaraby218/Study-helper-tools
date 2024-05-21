@@ -38,11 +38,26 @@ const pauseTimer = () => {
 
 const sendTimeSpentToServer = (timeSpent) => {
     console.log(`Task ID: ${taskId}`); 
-    let form = document.getElementById(`MarkDone_${taskId}`);
+  
+    if (timeSpent === 0) {
+        timeSpent = calculateTimeSpent();
+    }
+    let form = document.getElementById(`CompleteLater_${taskId}`);
     let timeInput = form.querySelector("input[name='timePerTask']");
     timeInput.value = timeSpent;
     console.log(`Form data: taskID=${taskId}, timePerTask=${timeSpent}`);
     form.submit(); 
+};
+
+const sendTimeSpentToServerPerMarkAsDone = (timeSpent) => {
+    console.log(`Task ID: ${taskId}`);
+    if (timeSpent === 0) {
+        timeSpent = calculateTimeSpent();
+    }
+    let form = document.getElementById(`MarkDonee_${taskId}`);
+    let timeInput = form.querySelector("input[name='timePerTask']");
+    timeInput.value = timeSpent;
+    console.log(`Form data: taskID=${taskId}, timePerTask=${timeSpent}`);
 };
 
 
