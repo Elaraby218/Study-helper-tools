@@ -11,6 +11,14 @@
             crossorigin="anonymous"></script>
     <link rel="stylesheet" href="/css/Login.css" />
     <title>Study tools</title>
+    <script type="text/javascript">
+        window.history.pushState(null, null, location.href);
+        window.history.back();
+        window.history.forward();
+        window.onmouseout = function () {
+            history.go(1);
+        };
+    </script>
 </head>
 <body>
     <div class="container">
