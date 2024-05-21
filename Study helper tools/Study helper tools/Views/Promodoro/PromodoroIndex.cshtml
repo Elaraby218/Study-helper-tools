@@ -34,6 +34,7 @@
 
         function MarkDoneForm(taskId) {
             var formId = "MarkDonee_" + taskId;
+            sendTimeSpentToServerPerMarkAsDone(0);
             document.getElementById(formId).submit();
         }
     </script>
@@ -93,15 +94,19 @@
                         </h4>
                     </div>
                     <div class="button-wrapper">
-                        <form method="post" action="/Promodoro/EditTimePerTask" id="MarkDone_@SharedValues.CurTask.Id">
+
+                        <form method="post" action="/Promodoro/EditTimePerTask" id="CompleteLater_@SharedValues.CurTask.Id">
                             <input type="hidden" name="taskID" value="@SharedValues.CurTask.Id" />
-                            <input type="number" name="timePerTask" hidden  />
+                            <input type="number" name="timePerTask" hidden />
                         </form>
+
                         <form method="post" action="/Promodoro/MarkDoneTask" id="MarkDonee_@SharedValues.CurTask.Id">
                             <input type="hidden" name="taskID" value="@SharedValues.CurTask.Id" />
                             <input type="number" name="timePerTask" hidden />
                         </form>
+
                         <button class="btnn fill" onclick="MarkDoneForm(@SharedValues.CurTask.Id)">Mark as done</button>
+                        <button class="btnn fill" onclick="sendTimeSpentToServer(0)">Complete Task Later</button>
                     </div>
                 </div>
             }
