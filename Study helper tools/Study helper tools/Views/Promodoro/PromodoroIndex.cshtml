@@ -34,7 +34,7 @@
 
         function MarkDoneForm(taskId) {
             var formId = "MarkDonee_" + taskId;
-            sendTimeSpentToServerPerMarkAsDone(0);
+            sendTimeSpentToServerPerMarkAsDone(Number(0));
             document.getElementById(formId).submit();
         }
     </script>
@@ -106,7 +106,7 @@
                         </form>
 
                         <button class="btnn fill" onclick="MarkDoneForm(@SharedValues.CurTask.Id)">Mark as done</button>
-                        <button class="btnn fill" onclick="sendTimeSpentToServer(0)">Complete Task Later</button>
+                        <button class="btnn fill" onclick="sendTimeSpentToServer(Number(0))">Complete Task Later</button>
                     </div>
                 </div>
             }
