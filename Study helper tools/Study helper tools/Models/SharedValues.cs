@@ -12,6 +12,7 @@ namespace Study_helper_tools.Models
         public static List<ToDo> CurUserTasks = new List<ToDo>();
         public static List<ToDo> CurUserAchievedTasks = new List<ToDo>();
         public static List<ToDo> CurUserNotAchievedTasks = new List<ToDo>();
+        public static ToDo CurTask = null;
         public static void setCurUser(User user)
         {
             CurUser = user;
