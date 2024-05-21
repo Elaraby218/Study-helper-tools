@@ -24,22 +24,22 @@ namespace Study_helper_tools.Models
 
         public static void setActive(string activeOne)
         {
-            if(activeOne == "Analytics")
+            if (activeOne == "Analytics")
             {
                 AnalyticsActive = "active";
                 setNull("Analytics");
             }
-            if(activeOne == "DashBoard")
+            if (activeOne == "DashBoard")
             {
                 DashBoardActive = "active";
                 setNull("DashBoard");
             }
-            if(activeOne == "ToDo")
+            if (activeOne == "ToDo")
             {
                 ToDoActive = "active";
                 setNull("ToDo");
             }
-            if(activeOne == "Promdoro")
+            if (activeOne == "Promdoro")
             {
                 PromdoroActive = "active";
                 setNull("Promdoro");
@@ -47,19 +47,19 @@ namespace Study_helper_tools.Models
         }
         public static void setNull(string activeOne)
         {
-            if(activeOne != "Analytics")
+            if (activeOne != "Analytics")
             {
                 AnalyticsActive = "";
             }
-            if(activeOne != "DashBoard")
+            if (activeOne != "DashBoard")
             {
                 DashBoardActive = "";
             }
-            if(activeOne != "ToDo")
+            if (activeOne != "ToDo")
             {
                 ToDoActive = "";
             }
-            if(activeOne != "Promdoro")
+            if (activeOne != "Promdoro")
             {
                 PromdoroActive = "";
             }
@@ -72,19 +72,19 @@ namespace Study_helper_tools.Models
             totalAchievedTasks = 0;
             totalNotAchievedTasks = 0;
             totalAchievedTime = 0;
-            foreach(var item in CurUserTasks)
+            foreach (var item in CurUserTasks)
             {
-                if(item.IsDone)
+                if (item.IsDone)
                 {
                     CurUserAchievedTasks.Add(item);
                     totalAchievedTasks++;
-                    totalAchievedTime += item.TimePerTask;
                 }
-                else if(!item.IsDone)
+                else if (!item.IsDone)
                 {
                     CurUserNotAchievedTasks.Add(item);
                     totalNotAchievedTasks++;
                 }
+                totalAchievedTime += item.TimePerTask;
             }
         }
 
