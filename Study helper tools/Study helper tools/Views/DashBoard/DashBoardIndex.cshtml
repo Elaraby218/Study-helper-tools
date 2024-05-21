@@ -1,6 +1,195 @@
-﻿
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+    <style>
+
+        @@import url('https://fonts.googleapis.com/css?family=Muli&display=swap');
+
+        .course {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
+            display: flex;
+            max-width: 100%;
+            margin: 30px 45px;
+            overflow: hidden;
+            width: 850px;
+        }
+
+
+        .coursee {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
+            display: flex;
+            max-width: 100%;
+            margin: 30px 14px;
+            overflow: hidden;
+            width: 730px;
+        }
+
+            .course h6 {
+                opacity: 0.6;
+                margin: 0;
+                letter-spacing: 1px;
+                text-transform: uppercase;
+            }
+
+            .course h2 {
+                letter-spacing: 1px;
+                margin: 10px 0;
+            }
+
+        .course-preview {
+            background-color: #2A265F;
+            color: #fff;
+            padding: 30px;
+            max-width: 250px;
+        }
+
+            .course-preview a {
+                color: #fff;
+                display: inline-block;
+                font-size: 12px;
+                opacity: 0.6;
+                margin-top: 30px;
+                text-decoration: none;
+            }
+
+        .course-info {
+            padding: 30px;
+            position: relative;
+            width: 100%;
+        }
+
+        .progress-container {
+            position: absolute;
+            top: 30px;
+            right: 30px;
+            text-align: right;
+            width: 150px;
+        }
+
+        .progress {
+            background-color: #ddd;
+            border-radius: 3px;
+            height: 5px;
+            width: 100%;
+        }
+
+            .progress::after {
+                border-radius: 3px;
+                background-color: #2A265F;
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                height: 5px;
+                width: 100%;
+            }
+
+    </style>
+</head>
 <body>
 
-<h1>Hello in dash board</h1>
-  
+
+    <ul class="box-info">
+        <li>
+            <i class='bx bxs-calendar-check'></i>
+            <span class="text">
+                <h3>@SharedValues.totalAchievedTasks</h3>
+                <p>Achieved Tasks</p>
+            </span>
+        </li>
+        <li>
+            <i class='bx bxs-time-five'></i>
+            <span class="text">
+                <h3>@(SharedValues.totalAchievedTime / 60) H @(SharedValues.totalAchievedTime % 60) M </h3>
+                <p>Total Task Achieved Time</p>
+            </span>
+        </li>
+        <li>
+            <i class='bx bxs-error-alt'></i>
+            <span class="text">
+                <h3>@SharedValues.totalNotAchievedTasks</h3>
+                <p>Not Achieved Tasks</p>
+            </span>
+        </li>
+    </ul>
+
+
+    <div class="table-data">
+        <div class="order">
+            <div class="head">
+                <h3>Achieved Tasks</h3>
+            </div>
+            @{
+                foreach (var task in SharedValues.CurUserAchievedTasks)
+                {
+                    <div class="courses-container">
+                        <div class="course">
+                            <div class="course-preview">
+                                <h5>@(task.TimePerTask / 60) hrs @(task.TimePerTask % 60) mins</h5>
+                                <h2>@task.TaskTitle</h2>
+                                <a href="#"><i class="fas fa-check"></i></a>
+                                <a href="#"><i class="fas fa-check"></i></a>
+                                <a href="#"><i class="fas fa-check"></i></a>
+
+                            </div>
+                            <div class="course-info">
+                                <div class="progress-container">
+                                    <div class="progress"></div>
+                                    <span class="progress-text">
+                                    </span>
+                                </div>
+                                <h6>@task.AddedDate.ToString("yyyy-MM-dd") : @task.DoneDate.ToString("yyyy-MM-dd")</h6>
+                                <h2>@task.TaskDescription </h2>
+                            </div>
+                        </div>
+                    </div>
+
+                }
+            }
+
+        </div>
+        <div class="todo">
+            <div class="head"> <h3>Not Achieved Tasks</h3> </div>
+            @{
+                foreach (var task in SharedValues.CurUserNotAchievedTasks)
+                {
+                    <div class="courses-container">
+                        <div class="coursee">
+                            <div class="course-preview">
+                                <h5>@(task.TimePerTask / 60) hrs @(task.TimePerTask % 60) mins</h5>
+                                <h2>@task.TaskTitle</h2>
+                                <a href="#"><i class="fas fa-check"></i></a>
+                                <a href="#"><i class="fas fa-check"></i></a>
+                                <a href="#"><i class="fas fa-check"></i></a>
+
+                            </div>
+                            <div class="course-info">
+                                <div class="progress-container">
+                                    <div class="progress"></div>
+                                    <span class="progress-text">
+                                    </span>
+                                </div>
+                                <h6>@task.AddedDate.ToString("yyyy-MM-dd") : @task.DoneDate.ToString("yyyy-MM-dd")</h6>
+                                <h2>@task.TaskDescription </h2>
+                            </div>
+                        </div>
+                    </div>
+
+                }
+            }
+        </div>
+    </div>
+
+
+
+    <script src="script.js"></script>
 </body>
+</html>
