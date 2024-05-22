@@ -13,7 +13,7 @@ namespace Study_helper_tools.Controllers
         }
         public IActionResult PromodoroIndex()
         {
-            SharedValues.setActive("Promdoro"); 
+            SharedValues.setActive("Promdoro");
             SharedValues.CurTask = null;
             return View();
         }
@@ -27,13 +27,13 @@ namespace Study_helper_tools.Controllers
         }
 
         [HttpPost]
-        public IActionResult MarkDoneTask(int taskId , int timePerTask)
+        public IActionResult MarkDoneTask(int taskId, int timePerTask)
         {
-            ToDo task = _db.ToDos.FirstOrDefault(t=>t.Id == taskId);
+            ToDo task = _db.ToDos.FirstOrDefault(t => t.Id == taskId);
             task.IsDone = true;
             task.TimePerTask += timePerTask;
             _db.SaveChanges();
-            SharedValues.CurUserTasks = _db.ToDos.Where(t=>t.UserId == SharedValues.CurUser.Id && t.IsDeleted==false).ToList();
+            SharedValues.CurUserTasks = _db.ToDos.Where(t => t.UserId == SharedValues.CurUser.Id && t.IsDeleted == false).ToList();
             SharedValues.setTasks();
             SharedValues.CurTask = null;
             return View("PromodoroIndex");
@@ -42,12 +42,15 @@ namespace Study_helper_tools.Controllers
         [HttpPost]
         public IActionResult EditTimePerTask(int taskID, int timePerTask)
         {
-            _db.ToDos.FirstOrDefault(t=>t.Id == taskID).TimePerTask += timePerTask;
+            ToDo tsk = _db.ToDos.FirstOrDefault(t => t.Id == taskID);
+            tsk.TimePerTask += timePerTask;
             _db.SaveChanges();
+            SharedValues.CurUserTasks = _db.ToDos.Where(t => t.UserId == SharedValues.CurUser.Id && t.IsDeleted == false).ToList();
             SharedValues.CurTask = null;
+            SharedValues.setTasks();
             return View("PromodoroIndex");
         }
     }
 
-    
+
 }
