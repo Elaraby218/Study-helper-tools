@@ -10,13 +10,12 @@ sign_in_btn.addEventListener("click", () => {
     container.classList.remove("sign-up-mode");
 });
 
-
 function previewPhoto(input) {
     if (input.files && input.files[0]) {
         var reader = new FileReader();
-        reader.onload = function (e) { // e is onload event :)
-            document.getElementById('photoPreview').style.backgroundImage = 'url(' + e.target.result + ')'; // set the image to the background of the div
-            document.getElementById('photoPath').value = e.target.result; // set the value of the hidden input to the base64 string
+        reader.onload = function (e) {
+            document.getElementById('photoPreview').style.backgroundImage = 'url(' + e.target.result + ')';
+            document.getElementById('photoPath').value = e.target.result;
         };
         reader.readAsDataURL(input.files[0]);
     }
@@ -38,6 +37,7 @@ function hideValidationTip() {
 let photo = document.getElementById("photoUpload");
 let photoVali = function () {
     const photoValue = photo.value.trim();
+    eval("console.log('Photo Validation')");
     if (photoValue === "") {
         return "Photo cannot be empty";
     } else {
@@ -45,16 +45,14 @@ let photoVali = function () {
     }
 };
 
-
 ////////////////////////////////////////////////////////// Elements of the signup form
 let userName = document.getElementById("userName");
-let submigbtn = document.getElementById("signupBtn");
+let signupBtn = document.getElementById("signupBtn");
 let firstName = document.getElementById("firstName");
 let lastName = document.getElementById("lastName");
 let email = document.getElementById("email");
 let phoneNumber = document.getElementById("phoneNumber");
 let password = document.getElementById("password");
-////////////////////////////////////////////////////////////
 
 //////////////////////////////////////////////////////////////// Validate username
 let userNameVali = function () {
@@ -65,13 +63,11 @@ let userNameVali = function () {
         return "Username cannot be empty";
     } else if (!userNamePattern.test(userNameValue)) {
         return "Username can only contain letters, digits, and underscores";
-    } else if (!isNaN(string(userNameValue))) {
+    } else if (!isNaN(String(userNameValue))) {
         return "Username cannot be only numbers";
-    }
-    else if (userNamevalue.find("@") !== -1) {
+    } else if (userNameValue.indexOf("@") !== -1) {
         return "Username cannot have @ sign";
-    }
-    else {
+    } else {
         return "";
     }
 };
@@ -109,7 +105,7 @@ let lastNameVali = function () {
 let emailVali = function () {
     const emailValue = email.value.trim();
     const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    eval("console.log('Email Name Validation')");
+    eval("console.log('Email Validation')");
     if (emailValue === "") {
         return "Email cannot be empty";
     } else if (!regex.test(emailValue)) {
@@ -124,7 +120,7 @@ let emailVali = function () {
 let phoneNumberVali = function () {
     const phoneNumberValue = phoneNumber.value.trim();
     const regex = /^\d{11}$/;
-    eval("console.log('Phone Name Validation')");
+    eval("console.log('Phone Number Validation')");
     if (phoneNumberValue === "") {
         return "Phone number cannot be empty";
     } else if (!regex.test(phoneNumberValue)) {
@@ -158,7 +154,7 @@ let validationFunctions = [
     { func: emailVali, element: email },
     { func: phoneNumberVali, element: phoneNumber },
     { func: passwordValidate, element: password },
-    { func: photoVali, element: photoUpload }
+    { func: photoVali, element: photo }
 ];
 
 document.getElementById('uploadForm').onsubmit = function (event) {
@@ -166,7 +162,7 @@ document.getElementById('uploadForm').onsubmit = function (event) {
 
     for (let { func, element } of validationFunctions) {
         let errorMessage = func();
-        if (errorMessage) {
+        if (errorMessage !== "" ) {
             showValidationTip(errorMessage);
             isValid = false;
             element.focus();
@@ -176,8 +172,6 @@ document.getElementById('uploadForm').onsubmit = function (event) {
 
     if (!isValid) {
         event.preventDefault();
-    } else {
-        return;
     }
 };
 
