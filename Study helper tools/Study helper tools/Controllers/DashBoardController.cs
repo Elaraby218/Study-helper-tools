@@ -8,6 +8,7 @@ namespace Study_helper_tools.Controllers
 		public IActionResult DashBoardIndex()
 		{
 			SharedValues.setActive("DashBoard");
+			SharedValues.setTasks();
 			return View();
 		}
 	}
